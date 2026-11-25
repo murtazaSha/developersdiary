@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the story, vision and mission behind Developers Diary — Inspire Learning and Increase Wisdom.">
+  <meta name="theme-color" content="#064e3b">
+  <title>Our Story | Developers Diary</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --dd-dark: #064e3b;
+      --dd-green: #047857;
+      --dd-bright: #10b981;
+      --dd-bg: #f5f7fa;
+      --dd-ink: #14231e;
+      --dd-muted: #64736d;
+      --dd-line: #e2ebe6;
+      --dd-white: #fff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--dd-ink); background: var(--dd-white); }
+    .story-page a { color: inherit; text-decoration: none; }
+    .story-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .story-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--dd-line); backdrop-filter: blur(12px); }
+    .story-nav-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .story-brand { display: flex; align-items: center; gap: 11px; font-size: 19px; font-weight: 800; color: var(--dd-dark); letter-spacing: -.4px; }
+    .story-brand-mark { width: 39px; height: 39px; display: grid; place-items: center; color: white; border-radius: 12px; background: linear-gradient(135deg,var(--dd-green),var(--dd-bright)); font-size: 19px; }
+    .story-links { display: flex; align-items: center; gap: 27px; color: #40534a; font-size: 14px; font-weight: 700; }
+    .story-links a:hover, .story-links a.active { color: var(--dd-green); }
+    .story-links .story-nav-cta { color: white; background: var(--dd-green); padding: 11px 17px; border-radius: 9px; }
+    .story-links .story-nav-cta:hover { color: white; background: var(--dd-dark); }
+    .story-menu { display: none; border: 1px solid var(--dd-line); background: white; color: var(--dd-dark); border-radius: 8px; padding: 9px 12px; font-size: 20px; cursor: pointer; }
+    .story-hero { position: relative; overflow: hidden; padding: 94px 0 88px; color: white; background: radial-gradient(circle at 82% 18%,rgba(16,185,129,.34),transparent 27%), linear-gradient(125deg,#043b2d 0%,#065f46 54%,#047857 100%); }
+    .story-hero:after { content: ""; position: absolute; width: 430px; height: 430px; right: -130px; bottom: -260px; border: 1px solid rgba(255,255,255,.15); border-radius: 50%; box-shadow: 0 0 0 42px rgba(255,255,255,.035),0 0 0 85px rgba(255,255,255,.025); }
+    .story-hero-content { position: relative; z-index: 1; max-width: 790px; }
+    .story-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border: 1px solid rgba(255,255,255,.25); border-radius: 100px; color: #c9f7e4; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+    .story-hero h1 { margin: 23px 0 17px; max-width: 760px; font-size: clamp(42px,6vw,68px); line-height: 1.06; letter-spacing: -2.5px; }
+    .story-hero h1 span { color: #6ee7b7; }
+    .story-hero p { max-width: 680px; margin: 0; color: #d9f5e8; font-size: 18px; line-height: 1.8; }
+    .story-hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 31px; }
+    .story-btn { display: inline-flex; align-items: center; justify-content: center; padding: 13px 20px; border-radius: 9px; font-size: 14px; font-weight: 800; transition: .2s ease; }
+    .story-btn-primary { color: var(--dd-dark) !important; background: white; }
+    .story-btn-primary:hover { transform: translateY(-2px); background: #d1fae5; }
+    .story-btn-outline { color: white !important; border: 1px solid rgba(255,255,255,.45); }
+    .story-btn-outline:hover { background: rgba(255,255,255,.1); }
+    .story-section { padding: 82px 0; }
+    .story-section.soft { background: var(--dd-bg); }
+    .story-section-head { max-width: 720px; margin: 0 auto 42px; text-align: center; }
+    .story-kicker { color: var(--dd-green); font-size: 12px; font-weight: 800; letter-spacing: 1.7px; text-transform: uppercase; }
+    .story-section h2 { margin: 12px 0 14px; color: var(--dd-dark); font-size: clamp(29px,4vw,42px); line-height: 1.16; letter-spacing: -1.2px; }
+    .story-section-head p, .story-copy p { color: var(--dd-muted); font-size: 16px; line-height: 1.85; }
+    .story-intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
+    .story-copy h2 { margin-top: 12px; }
+    .story-copy p { margin: 0 0 15px; }
+    .story-note { padding: 28px; border: 1px solid #d8eee3; border-radius: 18px; background: linear-gradient(145deg,#f0fdf6,#fff); box-shadow: 0 18px 45px rgba(6,78,59,.07); }
+    .story-note-mark { color: var(--dd-bright); font-size: 38px; line-height: 1; font-weight: 900; }
+    .story-note blockquote { margin: 13px 0 18px; color: var(--dd-dark); font-size: 23px; line-height: 1.45; font-weight: 800; }
+    .story-note small { color: var(--dd-muted); font-weight: 700; }
+    .story-values { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .story-value { padding: 27px 24px; border: 1px solid var(--dd-line); border-radius: 15px; background: white; }
+    .story-value-icon { width: 44px; height: 44px; display: grid; place-items: center; margin-bottom: 17px; border-radius: 12px; background: #e7f8ef; color: var(--dd-green); font-size: 21px; }
+    .story-value h3 { margin: 0 0 9px; color: var(--dd-dark); font-size: 19px; }
+    .story-value p { margin: 0; color: var(--dd-muted); font-size: 14px; line-height: 1.75; }
+    .story-areas { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
+    .story-area { padding: 20px; border: 1px solid var(--dd-line); border-radius: 12px; background: white; }
+    .story-area strong { display: block; margin-bottom: 6px; color: var(--dd-dark); font-size: 15px; }
+    .story-area span { color: var(--dd-muted); font-size: 13px; line-height: 1.6; }
+    .story-slogan { padding: 70px 20px; text-align: center; color: white; background: linear-gradient(120deg,#064e3b,#047857); }
+    .story-slogan .story-kicker { color: #a7f3d0; }
+    .story-slogan h2 { margin: 15px 0 13px; color: white; font-size: clamp(32px,5vw,51px); letter-spacing: -1.5px; }
+    .story-slogan p { max-width: 650px; margin: 0 auto; color: #d1fae5; font-size: 16px; line-height: 1.8; }
+    .story-cta { padding: 72px 0; text-align: center; }
+    .story-cta p { max-width: 650px; margin: 0 auto 25px; color: var(--dd-muted); line-height: 1.8; }
+    .story-cta .story-btn { color: white; background: var(--dd-green); }
+    .story-cta .story-btn:hover { background: var(--dd-dark); transform: translateY(-2px); }
+    .story-footer { padding: 27px 0; color: #d1fae5; background: #032f25; }
+    .story-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; font-size: 13px; }
+    .story-footer strong { color: white; }
+    @media (max-width: 780px) {
+      .story-menu { display: block; }
+      .story-links { display: none; position: absolute; top: 75px; left: 0; right: 0; padding: 18px 22px 22px; background: white; border-bottom: 1px solid var(--dd-line); flex-direction: column; align-items: stretch; gap: 17px; }
+      .story-links.open { display: flex; }
+      .story-links .story-nav-cta { text-align: center; }
+      .story-hero { padding: 72px 0 70px; }
+      .story-intro-grid { grid-template-columns: 1fr; gap: 28px; }
+      .story-values, .story-areas { grid-template-columns: 1fr; }
+      .story-section { padding: 62px 0; }
+      .story-footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="story-page">
+  <header class="story-nav">
+    <div class="story-container story-nav-inner">
+      <a class="story-brand" href="index.html" aria-label="Developers Diary home">
+        <span class="brand-mark"><img src="images/logo.png" alt="Company Logo" width="120" height="60"></span>
+        <span><strong>Developers</strong> Diary</span>
+      </a>
+      <button class="story-menu" id="storyMenu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="story-links" id="storyLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="our-story.html">Our Story</a>
+        <a class="story-nav-cta" href="https://www.youtube.com/@DevelopersDiaryOfficial" target="_blank" rel="noopener">Visit YouTube ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="story-hero">
+      <div class="story-container">
+        <div class="story-hero-content">
+          <span class="story-eyebrow">Our Vision · Our Mission · Our Journey</span>
+          <h1>Every great journey begins with a <span>desire to learn.</span></h1>
+          <p>We believe knowledge has the power to transform ideas into skills, questions into solutions, and learners into creators. This is the story and purpose behind Developers Diary.</p>
+          <div class="story-hero-actions">
+            <a class="story-btn story-btn-primary" href="#our-journey">Discover Our Story</a>
+            <a class="story-btn story-btn-outline" href="https://www.youtube.com/@DevelopersDiaryOfficial" target="_blank" rel="noopener">Explore Our Tutorials ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section" id="our-journey">
+      <div class="story-container story-intro-grid">
+        <div class="story-copy">
+          <span class="story-kicker">The beginning</span>
+          <h2>A place where learning becomes a journey.</h2>
+          <p>Every developer starts somewhere: with a question, a challenge, a programming error, or a dream of building something meaningful. The path is full of new concepts to understand and problems to solve.</p>
+          <p>Developers Diary grew from a simple belief: learning should be practical, accessible, and shared. We want to make complex technical concepts easier to understand through step-by-step tutorials, real-world examples, and hands-on demonstrations.</p>
+          <p>Our diary is a growing collection of lessons, discoveries, and solutions — created to help learners move forward, one concept at a time.</p>
+        </div>
+        <aside class="story-note">
+          <div class="story-note-mark">“</div>
+          <blockquote>Knowledge becomes more valuable when it is understood, practiced, and shared.</blockquote>
+          <small>The belief that guides Developers Diary</small>
+        </aside>
+      </div>
+    </section>
+
+    <section class="story-section soft">
+      <div class="story-container">
+        <div class="story-section-head">
+          <span class="story-kicker">What we believe</span>
+          <h2>More than tutorials. A purpose to share knowledge.</h2>
+          <p>We want every lesson to do more than explain a feature. It should build understanding, encourage curiosity, and help someone apply what they have learned.</p>
+        </div>
+        <div class="story-values">
+          <article class="story-value">
+            <div class="story-value-icon">✦</div>
+            <h3>Inspire Curiosity</h3>
+            <p>Encourage learners to ask questions, explore new technologies, and never stop discovering how things work.</p>
+          </article>
+          <article class="story-value">
+            <div class="story-value-icon">⌘</div>
+            <h3>Build Practical Skills</h3>
+            <p>Connect concepts with hands-on examples, real-world scenarios, and solutions that learners can put into practice.</p>
+          </article>
+          <article class="story-value">
+            <div class="story-value-icon">∞</div>
+            <h3>Grow Through Sharing</h3>
+            <p>Make knowledge accessible and useful so that one person's learning can become another person's starting point.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="story-container">
+        <div class="story-section-head">
+          <span class="story-kicker">What we explore</span>
+          <h2>Learning across technology and real-world development.</h2>
+          <p>From the foundations of programming to enterprise applications, our content focuses on knowledge that helps learners understand, build, and solve.</p>
+        </div>
+        <div class="story-areas">
+          <div class="story-area"><strong>Oracle E-Business Suite (EBS R12)</strong><span>Functional and technical concepts, Financials, SCM, workflows, APIs, and implementation practices.</span></div>
+          <div class="story-area"><strong>Oracle APEX</strong><span>Application development, interactive reports and grids, user interfaces, integrations, and projects.</span></div>
+          <div class="story-area"><strong>Oracle Database &amp; PL/SQL</strong><span>SQL, procedures, functions, packages, triggers, data modeling, and database development.</span></div>
+          <div class="story-area"><strong>ERP &amp; Business Solutions</strong><span>Business processes, automation, system integration, and enterprise application concepts.</span></div>
+          <div class="story-area"><strong>Programming &amp; Software Development</strong><span>Coding tutorials, development tools, practical techniques, and problem-solving.</span></div>
+          <div class="story-area"><strong>Practical Projects &amp; Troubleshooting</strong><span>Real-world examples, implementation scenarios, debugging, and lessons learned.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-slogan">
+      <div class="story-container">
+        <span class="story-kicker">Our slogan · Our promise</span>
+        <h2>Inspire Learning.<br>Increase Wisdom.</h2>
+        <p>We believe learning inspires curiosity, curiosity leads to discovery, and discovery increases wisdom. Our purpose is to help people grow through knowledge they can understand, practice, and share.</p>
+      </div>
+    </section>
+
+    <section class="story-cta">
+      <div class="story-container">
+        <span class="story-kicker">Be part of the journey</span>
+        <h2>There is always something new to learn.</h2>
+        <p>Whether you are writing your first line of code, developing an application, exploring ERP, or advancing your technical career, take the next step with Developers Diary.</p>
+        <a class="story-btn" href="https://www.youtube.com/@DevelopersDiaryOfficial" target="_blank" rel="noopener">Join the Learning Journey ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="story-footer">
+    <div class="story-container story-footer-inner">
+      <div><strong>Developers Diary</strong> — Inspire Learning and Increase Wisdom.</div>
+      <div>© 2026 Developers Diary. All Rights Reserved.</div>
+    </div>
+  </footer>
+</div>
+<script>
+  const storyMenu = document.getElementById('storyMenu');
+  const storyLinks = document.getElementById('storyLinks');
+  storyMenu.addEventListener('click', () => {
+    const isOpen = storyLinks.classList.toggle('open');
+    storyMenu.setAttribute('aria-expanded', String(isOpen));
+    storyMenu.textContent = isOpen ? '×' : '☰';
+  });
+  storyLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      storyLinks.classList.remove('open');
+      storyMenu.setAttribute('aria-expanded', 'false');
+      storyMenu.textContent = '☰';
+    });
+  });
+</script>
+</body>
+</html>
